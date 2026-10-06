@@ -1,0 +1,6 @@
+{
+  "name": "MediCare - Online Healthcare Management System",
+  "description": "Complete online healthcare management platform connecting patients, doctors, and administrators with appointments, medical history, consultations, and doctor approvals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
