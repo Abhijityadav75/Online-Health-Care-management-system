@@ -1,6 +1,6 @@
 # MediCare - Online Healthcare Management System
 
-MediCare is a comprehensive, production-grade, and responsive **Web-Based Healthcare Management System**. It features a modern React Single Page Application (SPA) frontend running on Vite + TypeScript + Tailwind CSS, coupled with a robust Java Servlet backend that handles secure authentication, session caching, JDBC relational operations, and analytical processing.
+MediCare is a comprehensive and responsive **Web-Based Healthcare Management System**. It features a modern React Single Page Application (SPA) frontend running on Vite + TypeScript + Tailwind CSS, coupled with a Java Servlet backend that handles secure authentication, session management, JDBC database operations, and analytical processing.
 
 The project is structured strictly according to clean software engineering principles, modular architecture, and industry-standard coding conventions.
 
@@ -43,7 +43,7 @@ medicare-healthcare-system/
 │   └── pom.xml                          # Maven Dependency Configuration
 │
 ├── src/                                 # React Frontend (TypeScript)
-│   ├── api/                             # API Client Layer (Axios Fetchers, Handlers)
+│   ├── api/                             # API Client Layer (Fetch API)
 │   ├── components/                      # Shared Presentational UI widgets (Sidebar, Headers)
 │   ├── context/                         # Central State Engine (AppContext Auth, Sync)
 │   ├── screens/                         # Multi-role Dashboards & Portal Screens
@@ -64,9 +64,10 @@ medicare-healthcare-system/
 
 ## 🛠️ Tech Stack & Requirements
 
-* **Frontend**: React 18, Vite, TypeScript, Tailwind CSS, Lucide Icons, jsPDF.
-* **Backend**: Java 17+, Jakarta Servlet API, Maven.
-* **Database**: MySQL/MariaDB (configured via JDBC drivers), with offline-resilient LocalStorage backup caches in the frontend.
+- **Frontend**: React 18, Vite, TypeScript, Tailwind CSS, Lucide Icons, jsPDF.
+- **Backend**: Java 17+, Jakarta Servlet API, Maven.
+- **Database**: MySQL/MariaDB accessed through JDBC.
+- **Data Persistence**: Application data is managed through the Java Servlet backend and MySQL database.
 
 ---
 
@@ -106,10 +107,13 @@ Deploy the resulting `.war` file to your servlet container of choice (e.g., Apac
 ---
 
 ## 🛡️ Coding Standards & Quality Guidelines
-* **Type-Safety**: Enforced strictly across all API payloads and visual states via defined TypeScript interfaces (`src/types.ts`).
-* **Modular UI Components**: Screen layouts are split into independent components, utilizing atomic Tailwind utility classes for high-fidelity responsive behavior.
-* **SQL Injection Immunity**: Backend endpoints use parameterized `PreparedStatement` SQL queries to ensure maximum database security.
-* **Secure Fallbacks**: The frontend context integrates a localStorage resilience engine, ensuring the app remains perfectly functional, reviewable, and interactive even during network downtime.
 
+- **Type-Safety**: Enforced strictly across API payloads and visual states using defined TypeScript interfaces (`src/types.ts`).
+- **Modular UI Components**: Screen layouts are split into independent components, utilizing reusable React components and Tailwind CSS utilities.
+- **SQL Injection Protection**: Backend endpoints use parameterized `PreparedStatement` SQL queries.
+- **Session-Based Authentication**: User authentication is handled using server-side `HttpSession`.
+- **Role-Based Access Control**: Patient, Doctor, and Admin access is controlled through backend authorization checks.
+- **Backend as Source of Truth**: Application data is managed through the Java Servlet backend and MySQL database.
+- **Transaction Handling**: Critical database operations use transaction handling to maintain data consistency.
 ---
-*© 2026 MediCare Online Healthcare Network. Developed to the highest standards of Web-Based Software Solutions.*
+*© 2026 MediCare - Online Healthcare Management System*
